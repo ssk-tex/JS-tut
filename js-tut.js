@@ -54,6 +54,41 @@
 
         8. Object
 */
-let name = "sunny"      /* string */
-let age = 30            /* number */
-let isLoggedIn = true   /* boolean */
+// let name = "sunny"      /* string */
+// let age = 30            /* number */
+// let isLoggedIn = true   /* boolean */
+
+// console.log(typeof null); /* Object */
+
+/* --------------------------- Conversion ------------------------------ */
+
+// let score = "33";
+// console.log(typeof score);
+
+// let valueInNumber = Number(score);  /* string to number coversion */
+// console.log(typeof valueInNumber);
+
+/* if string is not in pure number then number coversion gives output 'NaN -> Not a Number' */
+/* null to number conversion gives output -> 0 */
+/* 
+    Ex.
+        "33" ==> 33;
+        "33a" ==> NaN;
+        true ==> 1; false ==> 0;
+*/
+
+// let isLoggedIn = 1;
+// let booleanIsLoggedIn = Boolean(isLoggedIn);  /* Number to Boolean conversion */
+// console.log(typeof booleanIsLoggedIn);
+
+/* 
+    Ex. 
+        1 ==> true
+        0 ==> false
+        "" ==> false
+        "abc" => true
+*/
+
+let number = 5;
+let stringNumber = String(number);
+console.log(typeof stringNumber);
