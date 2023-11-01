@@ -228,9 +228,7 @@ console.log(typeof stringNumber); */
 // console.log(`I am ${name}, My age is ${age}.`);     // template literal --string interpolation
 
 let userName = new String('sunny');
-// console.log(userName.toLocaleUpperCase());
-// console.log(userName.anchor('abc'));
-console.log(userName.at(3));
+console.log(userName.charCodeAt(0));
 
 /* 
     String Methods -->
@@ -244,11 +242,37 @@ console.log(userName.at(3));
 
                         string.anchor("name") --> <a name="name">string</a>
                 ]
-        3. at: ƒ at()
-        4. big:ƒ big()
-        5. blink:ƒ blink()
-        6. bold:ƒ bold()
-        7. charAt:ƒ charAt()
+        3. at: ƒ at() [ takes an integer value and returns the item at that index, if negative count back from the last item ]
+                [
+                    ex. 
+                        let userName = new String('sunny');
+                        console.log(userName.at(1));        ==> o/p --> u
+                        console.log(userName.at(-1));        ==> o/p --> y
+                ]
+        4. big:ƒ big() [ embeds the  string in '<big>' element ]
+                [
+                    ex.
+                        let userName = new String('sunny');
+                        console.log(userName.big());        ==> o/p --> <big>sunny</big>
+                ]
+        5. blink:ƒ blink() [ embeds the  string in '<blink>' element ]
+                [
+                    ex.
+                        let userName = new String('sunny');
+                        console.log(userName.blink());        ==> o/p --> <blink>sunny</blink>
+                ]
+        6. bold:ƒ bold()  [ embeds the  string in '<b> / bold' element ]
+                [
+                    ex.
+                        let userName = new String('sunny');
+                        console.log(userName.bold());        ==> o/p --> <b>sunny</b>
+                ]
+        7. charAt:ƒ charAt() [ takes an integer value and returns the item at that index ]
+                [
+                    ex. 
+                        let userName = new String('sunny');
+                        console.log(userName.at(1));        ==> o/p --> u
+                ]
         8. charCodeAt:ƒ charCodeAt()
         9. codePointAt:ƒ codePointAt()
         10. concat:ƒ concat()
