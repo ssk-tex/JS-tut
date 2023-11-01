@@ -227,8 +227,15 @@ console.log(typeof stringNumber); */
 // console.log("I am "+name+", My age is "+age+".");   // String concatenation
 // console.log(`I am ${name}, My age is ${age}.`);     // template literal --string interpolation
 
-let userName = new String('sunny');
-console.log(userName.charCodeAt(0));
+let userName = new String("sunny");
+console.log(userName.lastIndexOf('y'));
+
+// const sentence = 'The quick brown fox jumps over the lazy dog.';
+// const word = 'fox';
+
+// console.log(`The word '${word}' ${
+//     sentence.includes(word) ? "is" : "isn't"
+// } in the sentence. `);
 
 /* 
     String Methods -->
@@ -273,18 +280,76 @@ console.log(userName.charCodeAt(0));
                         let userName = new String('sunny');
                         console.log(userName.at(1));        ==> o/p --> u
                 ]
-        8. charCodeAt:ƒ charCodeAt()
-        9. codePointAt:ƒ codePointAt()
-        10. concat:ƒ concat()
-        11. constructor:ƒ String()
-        12. endsWith:ƒ endsWith()
-        13. fixed:ƒ fixed()
-        14. fontcolor:ƒ fontcolor()
-        15. fontsize: ƒ fontsize()
-        16. includes: ƒ includes()
-        17. indexOf: ƒ indexOf()
-        18. isWellFormed: ƒ isWellFormed()
-        19. italics: ƒ italics()
+        8. charCodeAt:ƒ charCodeAt() [ returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index ]
+                [
+                    Ex.
+                        let userName = new String('sunny');
+                        console.log(userName.charCodeAt(1));    ==> o/p --> 117 (UTF-16 Code of 'u'=>117)
+                ]
+        9. codePointAt:ƒ codePointAt() [ returns a non-negative integer that is the Unicode code point value of the character starting at the given index, Note that the index is still based on UTF-16 code units, not Unicode code points ]
+                [
+                    ex.
+                        let userName = new String('sunny');
+                        console.log(userName.charCodeAt(1));    ==> o/p --> 117 (UTF-16 Code of 'u'=>117) 
+                ]
+        *10. concat:ƒ concat() [ concatenates the string arguments to this string and returns a new string ]
+                [
+                    ex. 
+                        let userName = new String("Hello");
+                        console.log(userName.concat(" World")); ==> o/p --> Hello World
+                ]
+        **11. constructor:ƒ String()
+        12. endsWith:ƒ endsWith() [ determines whether a string ends with the characters of this string, returning true or false ]
+                [
+                    ex. 
+                        let userName = new String("sunny");
+                        console.log(userName.endsWith("y"));    ==> o/p --> true
+                        console.log(userName.endsWith("u"));    ==> o/p --> false
+                ]
+        13. fixed:ƒ fixed() [ creates a string that embeds this string in a <tt> element (<tt>str</tt>), which causes this string to be displayed in a fixed-width font. ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.fixed());          ==> o/p --> <tt>sunny</tt>
+                ]
+        14. fontcolor:ƒ fontcolor() [ embeds this string in a <font> element (<font color="...">str</font>), which causes this string to be displayed in the specified font color. ]
+                [
+                    ex. 
+                        let userName = new String("sunny");
+                        console.log(userName.fontcolor("red")); ==> o/p --> <font color="red">sunny</font>
+                ]
+        15. fontsize: ƒ fontsize() [ embeds this string in a <font> element (<font size="...">str</font>), which causes this string to be displayed in the specified font size. ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.fontsize("2"));    ==> o/p --> <font size="2">sunny</font>
+                ]
+        **16. includes: ƒ includes() [ a case-sensitive search to determine whether a given string may be found within this string, returning true or false ]
+                [
+                    ex. 
+                        const sentence = 'The quick brown fox jumps over the lazy dog.';
+                        const word = 'fox';
+
+                        console.log(`The word '${word}' ${
+                            sentence.includes(word) ? "is" : "isn't"
+                        } in the sentence. `);
+
+                            'fox' ==> o/p --> The word 'fox' is in the sentence. 
+                            'tiger' ==> o/p --> The word 'tiger' isn't in the sentence. 
+                ]
+        17. indexOf: ƒ indexOf() [ searches this string and returns the index of the first occurrence of the specified substring ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.indexOf("y"));     ==> o/p --> 4
+                ]
+        18. isWellFormed: ƒ isWellFormed() [ returns a boolean indicating whether this string contains any lone surrogates. ]
+        19. italics: ƒ italics() [ embeds the  string in '<i> / italics' element ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.italics());    ==> o/p --> <i>sunny</i>
+                ]
         20. lastIndexOf: ƒ lastIndexOf()
         21. link: ƒ link()
         22. localeCompare: ƒ localeCompare()
