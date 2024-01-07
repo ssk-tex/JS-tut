@@ -227,8 +227,9 @@ console.log(typeof stringNumber); */
 // console.log("I am "+name+", My age is "+age+".");   // String concatenation
 // console.log(`I am ${name}, My age is ${age}.`);     // template literal --string interpolation
 
-let userName = new String("sunny");
-console.log(userName.lastIndexOf('y'));
+let userName = new String("sun");
+// console.log(userName.padEnd(7,'.'));
+// console.log(userName.padStart(7, "."));
 
 // const sentence = 'The quick brown fox jumps over the lazy dog.';
 // const word = 'fox';
@@ -350,20 +351,63 @@ console.log(userName.lastIndexOf('y'));
                         let userName = new String("sunny");
                         console.log(userName.italics());    ==> o/p --> <i>sunny</i>
                 ]
-        20. lastIndexOf: ƒ lastIndexOf()
-        21. link: ƒ link()
+        20. lastIndexOf: ƒ lastIndexOf() [ returns the index of the last occurrence of the specified substring ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.lastIndexOf('y')); ==> o/p --> 4
+                ]
+        21. link: ƒ link() [ embeds the string with <a> ]
+                [
+                    ex.
+                        let userName = new String("sunny");
+                        console.log(userName.link("www.google.com"));
+                        ==> o/p --> <a href="www.google.com">sunny</a>
+                ]
         22. localeCompare: ƒ localeCompare()
-        23. match: ƒ match()
+        23. match: ƒ match() 
         24. matchAll: ƒ matchAll()
         25. normalize: ƒ normalize()
-        26. padEnd: ƒ padEnd()
-        27. padStart: ƒ padStart()
-        28. repeat: ƒ repeat()
-        29. replace: ƒ replace()
-        30. replaceAll: ƒ replaceAll()
-        31. search: ƒ search()
-        32. slice: ƒ slice()
-        33. small: ƒ small()
+            [
+               --- pads a string with another string (multiple times) until it reaches a given length. ---
+            ]
+        26. padEnd: ƒ padEnd() [ pads a string at the end ]
+                [
+                    ex. 
+                    let userName = new String("sun");
+    `               console.log(userName.padEnd(7,'.'));
+                    ==> o/p --> sun....
+                ]
+        27. padStart: ƒ padStart() [ pads a string from the start ]
+                [
+                    ex.
+                    let userName = new String("sun");
+                    console.log(userName.padStart(7,'.'));
+                    ==> o/p --> ....sun
+                ]
+        28. repeat: ƒ repeat() [ returns a new string which contains the specified number of copies of this string ]
+                [
+                    ex.
+                    let str = 'hi';
+                    console.log(str.repeat(4))  ==> o/p --> 'hihihihi'
+                ]
+        29. replace: ƒ replace() [ returns a new string with one, some, or all matches of a pattern replaced by a replacement ]
+                [
+                    ex.
+                    let string = "I love India"
+                    console.log(string) ==> o/p --> I love India.
+                    console.log(string.replace("India", "World")) ==> o/p --> I love World.
+                ]
+        30. replaceAll: ƒ replaceAll() [ returns a new string with all matches of a pattern replaced by a replacement ]
+                [
+                    ex.
+                    let string = 'I love India. India is a very big country';
+                    console.log(string.replaceAll('India', 'US'));
+                    ==> o/p --> I love US. US is a very big country
+                ]
+        31. search: ƒ search() [ executes a search for a match between a regular expression and this string, returning the index of the first match in the string ]
+        32. slice: ƒ slice() [ extracts a section of this string and returns it as a new string, without modifying the original string ]
+        33. small: ƒ small() 
         34. split: ƒ split()
         35. startsWith: ƒ startsWith()
         36. strike: ƒ strike()
@@ -385,3 +429,74 @@ console.log(userName.lastIndexOf('y'));
         52. valueOf: ƒ valueOf()
         53. Symbol(Symbol.iterator): ƒ [Symbol.iterator]()
 */
+
+/*-------------------------- Numbers & Maths -------------------------------------*/
+
+// num = new Number(65.9);
+// console.log(num);
+// console.log(num.valueOf());
+// console.log(typeof num.valueOf());
+
+/* 
+    Number Method:-
+        1. toExponential: ƒ toExponential() [ used to convert a number to its exponential form ]
+                [
+                    ex.
+                    num = new Number(65);
+                    console.log(num.toExponential());   ==> o/p --> 6.5e+1
+                ]
+        2. toFixed: ƒ toFixed() [ rounds the string to a specified number of decimals ]
+                [
+                    ex.
+                    num = new Number(65);
+                    console.log(num.toFixed(2));    ==> o/p --> 65.00
+                ]
+        3. toLocaleString: ƒ toLocaleString() [ converts a number into a string, using a local language format ]
+                [
+                    ex.
+                    num = new Number(65);
+                    console.log(num.toLocaleString()); ==>  o/p --> 65
+                    console.log(typeof(num.toLocaleString('en-IN')));  ==> o/p --> string
+                ]
+        4. toPrecision: ƒ toPrecision() [ returns a string representing this number to the specified precision ]
+                [
+                    ex.
+                    num = new Number(65.9);
+                    console.log(num.toPrecision(2)); ==> o/p --> 66
+                ]
+        5. toString: ƒ toString() [ allows you to convert any number type value into its string type representation ]
+                [
+                    ex.
+                    num = new Number(65); 
+                    console.log(typeof(num.toString()));  ==> o/p --> string
+                ]
+        6. valueOf: ƒ valueOf() [ returns the value of this number ]
+                [
+                    ex.
+                    num = new Number(65);
+                    console.log(num.valueOf());     ==> o/p --> 65
+                    console.log(typeof(num.valueOf())); ==> o/p --> number
+                ]
+*/
+
+// console.log(Math.PI);
+
+/* 
+    Math Method: Study when used
+*/
+
+// const date = new Date();
+// console.log(date.toString());
+// console.log(typeof date);
+// console.log(date.toDateString());
+// console.log(date.toLocaleString());
+// console.log(date.toISOString());
+
+/* 
+    Date & Time Method : Study When Used
+*/
+
+/* 
+    JS Object
+*/
+
