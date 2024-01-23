@@ -42,5 +42,5 @@ const languageExtension = {
 }
 
 for (const key in object) {
-    
+    console.log(key);
 }

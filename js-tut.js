@@ -497,6 +497,16 @@ let userName = new String("sun");
 */
 
 /* 
-    JS Object
+    JS Object destructuring
 */
 
+
+const course = {
+    courseName: 'JS',
+    price: '1',
+    courseInstructure: 'sunny'
+}
+
+const {courseInstructure : teacher} = course;
+
+console.log(teacher);
